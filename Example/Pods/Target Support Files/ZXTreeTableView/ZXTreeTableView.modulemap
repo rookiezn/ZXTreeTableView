@@ -1,0 +1,6 @@
+framework module ZXTreeTableView {
+  umbrella header "ZXTreeTableView-umbrella.h"
+
+  export *
+  module * { export * }
+}

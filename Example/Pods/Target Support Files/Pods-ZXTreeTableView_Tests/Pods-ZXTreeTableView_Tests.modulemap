@@ -1,0 +1,6 @@
+framework module Pods_ZXTreeTableView_Tests {
+  umbrella header "Pods-ZXTreeTableView_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
