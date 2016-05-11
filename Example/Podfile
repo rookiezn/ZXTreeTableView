@@ -1,0 +1,12 @@
+use_frameworks!
+
+target 'ZXTreeTableView_Example' do
+  pod 'ZXTreeTableView', :path => '../'
+
+  target 'ZXTreeTableView_Tests' do
+    inherit! :search_paths
+
+    pod 'Specta'
+  pod 'Expecta'
+  end
+end
