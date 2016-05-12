@@ -23,21 +23,22 @@
 - (NSArray *)hierarchy {
     if (!_hierarchy) {
         NSMutableArray *result = [NSMutableArray array];
-        [self flattenParentForNode:self to:result];
+        [self flattenHierarchyForNode:self to:result];
         _hierarchy = result;
     }
     return _hierarchy;
 }
 
-- (void)flattenParentForNode:(ZXTreeNode *)node to:(NSMutableArray *)result {
-    if (node.parent) {
-        NSInteger indexInSiblings = [node.parent.children indexOfObject:node];
-        [result insertObject:@(indexInSiblings) atIndex:0];
-        [self flattenParentForNode:node.parent to:result];
-    } else {
-        // root node
-        [result insertObject:node.hierarchy.firstObject atIndex:0];
-    }
+- (NSArray *)descendant {
+    NSMutableArray *result = [NSMutableArray array];
+    [self flattenDescendantForNode:self to:result];
+    return result;
+}
+
+- (NSArray *)ancestor {
+    NSMutableArray *result = [NSMutableArray array];
+    [self flattenAncestorForNode:self to:result];
+    return result;
 }
 
 - (NSString *)description {
@@ -50,6 +51,33 @@
         }
     }
     return string;
+}
+
+#pragma mark - Utils
+
+- (void)flattenDescendantForNode:(ZXTreeNode *)node to:(NSMutableArray *)result {
+    for (ZXTreeNode *child in node.children) {
+        [result addObject:child];
+        [self flattenDescendantForNode:child to:result];
+    }
+}
+
+- (void)flattenAncestorForNode:(ZXTreeNode *)node to:(NSMutableArray *)result {
+    if (node.parent) {
+        [result addObject:node.parent];
+        [self flattenAncestorForNode:node.parent to:result];
+    }
+}
+
+- (void)flattenHierarchyForNode:(ZXTreeNode *)node to:(NSMutableArray *)result {
+    if (node.parent) {
+        NSInteger indexInSiblings = [node.parent.children indexOfObject:node];
+        [result insertObject:@(indexInSiblings) atIndex:0];
+        [self flattenHierarchyForNode:node.parent to:result];
+    } else {
+        // root node
+        [result insertObject:node.hierarchy.firstObject atIndex:0];
+    }
 }
 
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D3130091CE3000C00D85261 /* _Pods.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D3130081CE3000C00D85261 /* _Pods.storyboard */; };
+		2D9AF0C21CE467130093C1C7 /* SwitcherNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9AF0C11CE467130093C1C7 /* SwitcherNode.m */; };
 		4F1FAB2A5C4877F92138ED68 /* Pods_ZXTreeTableView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C49CDDB5B17FBA43109E4B /* Pods_ZXTreeTableView_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		0F41B83F1DC24559A72B5937 /* ZXTreeTableView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZXTreeTableView.podspec; path = ../ZXTreeTableView.podspec; sourceTree = "<group>"; };
 		2D3130081CE3000C00D85261 /* _Pods.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = _Pods.storyboard; sourceTree = "<group>"; };
+		2D9AF0C01CE467130093C1C7 /* SwitcherNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitcherNode.h; sourceTree = "<group>"; };
+		2D9AF0C11CE467130093C1C7 /* SwitcherNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitcherNode.m; sourceTree = "<group>"; };
 		58273849D50B6D6AF47E7CF8 /* Pods-ZXTreeTableView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXTreeTableView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZXTreeTableView_Tests/Pods-ZXTreeTableView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* ZXTreeTableView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZXTreeTableView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -136,6 +139,8 @@
 				6003F5A6195388D20070C39A /* ZXViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				2D9AF0C01CE467130093C1C7 /* SwitcherNode.h */,
+				2D9AF0C11CE467130093C1C7 /* SwitcherNode.m */,
 			);
 			name = "Example for ZXTreeTableView";
 			path = ZXTreeTableView;
@@ -390,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D9AF0C21CE467130093C1C7 /* SwitcherNode.m in Sources */,
 				6003F59E195388D20070C39A /* ZXAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* ZXViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
@@ -516,6 +522,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZXTreeTableView/ZXTreeTableView-Prefix.pch";
 				INFOPLIST_FILE = "ZXTreeTableView/ZXTreeTableView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -532,6 +539,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZXTreeTableView/ZXTreeTableView-Prefix.pch";
 				INFOPLIST_FILE = "ZXTreeTableView/ZXTreeTableView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

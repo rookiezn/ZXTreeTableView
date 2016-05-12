@@ -36,4 +36,18 @@
  */
 @property (nonatomic, strong) NSArray<NSNumber *> *hierarchy;
 
+/**
+ *  get descendant nodes
+ *
+ *  @return all descendant nodes
+ */
+- (NSArray *)descendant;
+
+/**
+ *  get ancestor nodes
+ *
+ *  @return all ancestor nodes
+ */
+- (NSArray *)ancestor;
+
 @end
