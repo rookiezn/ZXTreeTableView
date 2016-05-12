@@ -23,7 +23,6 @@ static NSString *token = @"cell";
     self.view.backgroundColor = [UIColor whiteColor];
     ZXTreeTableView *tableView = [[ZXTreeTableView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT-20)];
     tableView.zxTreeTableViewDelegate = self;
-    tableView.tableHeaderView = [UIView new];
     tableView.tableFooterView = [UIView new];
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:token];
     [self.view addSubview:tableView];
@@ -54,6 +53,7 @@ static NSString *token = @"cell";
 }
 
 - (void)zxTreeTableView:(ZXTreeTableView *)treeTableView didSelectNode:(ZXTreeNode *)node {
+    [treeTableView toggleNode:node animated:YES];
     NSIndexPath *indexPath = [treeTableView indexPathForNode:node];
     [treeTableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"did select node: %@", node);

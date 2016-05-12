@@ -27,6 +27,20 @@
     return self;
 }
 
+- (void)setDelegate:(id<UITableViewDelegate>)delegate {
+    if (delegate != self) {
+        [NSException raise:@"delegate error" format:@"UITableView delegate can only be \"self\", use zxTreeTableViewDelegate instead"];
+    }
+    [super setDelegate:self];
+}
+
+- (void)setDataSource:(id<UITableViewDataSource>)dataSource {
+    if (dataSource != self) {
+        [NSException raise:@"dataSource error" format:@"UITableView dataSource can only be \"self\", use zxTreeTableViewDelegate instead"];
+    }
+    [super setDataSource:self];
+}
+
 - (ZXTreeNode *)nodeForIndexPath:(NSIndexPath *)indexPath {
     return self.allNodes[indexPath.row];
 }
@@ -98,7 +112,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ZXTreeNode *node = [self nodeForIndexPath:indexPath];
-    [self toggleNode:node animated:YES];
     if ([self.zxTreeTableViewDelegate respondsToSelector:@selector(zxTreeTableView:didSelectNode:)]) {
         [self.zxTreeTableViewDelegate zxTreeTableView:self didSelectNode:node];
     }
