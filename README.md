@@ -4,10 +4,11 @@
 [![Version](https://img.shields.io/cocoapods/v/ZXTreeTableView.svg?style=flat)](http://cocoapods.org/pods/ZXTreeTableView)
 [![License](https://img.shields.io/cocoapods/l/ZXTreeTableView.svg?style=flat)](http://cocoapods.org/pods/ZXTreeTableView)
 [![Platform](https://img.shields.io/cocoapods/p/ZXTreeTableView.svg?style=flat)](http://cocoapods.org/pods/ZXTreeTableView)
-
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+![](https://github.com/RookieZn/ZXTreeTableView/blob/master/demo.gif?raw=true)
 
 ## Requirements
 
